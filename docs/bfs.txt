@@ -1,0 +1,19 @@
+Package, Variables, Functions: (done)
+    Package, Functions: Modularize programs
+    Variable and Datatypes
+
+Flow Control: (done)
+    conditional, loops 
+
+
+Compound DS:
+    Struct, Array, Maps, Slices, Pointers
+
+Methods and Interfaces:
+    Polymorphism for different types
+
+Generics:
+    Same function on different types
+
+Concurrency:
+    Goroutines, Channels, Mutex

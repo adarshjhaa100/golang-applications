@@ -1,0 +1,24 @@
+Introduction and History: https://en.wikipedia.org/wiki/Go_(programming_language)
+
+Create go.mod file for dependency tracking using:
+
+> go mod init modulename
+
+Note: In applications where we want users to be able to download, we should prefix with a resource location like "github.com/username/module"
+
+To install/download a dependency, 
+
+> go mod tidy
+
+Utility and Applications:
+
+Features of GO:
+
+Concurrency,
+Simplicity in code (similar to Python, JS),
+Standard library has networking and cryptography,
+Lower Development Time,
+
+
+
+
