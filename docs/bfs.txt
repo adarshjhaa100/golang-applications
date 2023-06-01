@@ -4,10 +4,12 @@ Package, Variables, Functions: (done)
 
 Flow Control: (done)
     conditional, loops 
+    defer, panic, recover
 
 
 Compound DS:
     Struct, Array, Maps, Slices, Pointers
+    String Methods
 
 Methods and Interfaces:
     Polymorphism for different types

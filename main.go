@@ -22,6 +22,8 @@ func main() {
 	// Flow Control
 	// flowcontrol.ForLoop()
 	// flowcontrol.UsingSwitchInsteadIf()
-	flowcontrol.CallSqrt()
+	// flowcontrol.CallSqrt()
+	// flowcontrol.RunAllDefers()
+	flowcontrol.DeferAndRecover()
 
 }
