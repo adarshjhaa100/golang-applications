@@ -18,6 +18,8 @@ func check(e error){
 
 func fileRead(){
 
+	fmt.Println("File Reader...")
+
 	// Get current working directory
 	cwd, err := os.Getwd()
 	check(err)
@@ -105,8 +107,68 @@ func fileRead(){
 }
 
 
+func fileWrite(){
+
+	fmt.Println("File Writer...")
+
+	// Dump full string into a file
+	writeBuf := []byte("Hello, Im Writing to a File!")
+
+	// The third argument is writeFile is permission flag. For more info: https://docs.nersc.gov/filesystems/unix-file-permissions/ 
+	// The permission is generally represented in octal and is a 10 byte flag where: 0 -> directory; 1,2,3-> user; 4,5,6 -> group; 7,8,9 -> other(world)
+	// e.g. Here we have 0644 which is in octal. 0 =  not a directory, 6 - rw for user, 4 , 4 - read for group and other 
+	err := os.WriteFile("./data/testwritefull.txt", writeBuf, 0644)
+	check(err)
+
+	// For more granular wrtes open a file. Creates or Truncates(if already exists) the file
+	fdw, err := os.Create("./data/fileWrite1.txt") // perm = 0666
+	check(err)
+	defer fdw.Close()
+
+	// File system has an in memory copy. This function flushes that to stable storage
+	fdw.Sync()
+
+	// Write bytes to file using fs
+	data2 := []byte{65,66,67}
+	
+	// write String into file
+	data3 := "Writing String to a File"
+	
+	// fmt.Println(string(data2))
+	n,err := fdw.Write(data2)
+	check(err)
+	fmt.Printf("Wrote %v bytes to file\n", n)
+
+	// Write String
+	n, err = fdw.WriteString(data3)
+	check(err)
+	fmt.Printf("Wrote %v bytes to file\n", n)
+
+
+	// Write to an existing file. The second argument is a flag which can be or stacked O_APPEND|os.O_CREATE|os.O_WRONLY (this would append to file, if doesn't exist, create file). The constants can be obtained from: https://pkg.go.dev/os#pkg-constants
+	fdw2, err := os.OpenFile("./data/fileWriter2.txt",os.O_CREATE|os.O_RDWR, 0644)
+	check(err)
+	defer fdw2.Close()
+
+	bytesWrite := []byte("Hello World, Im appending to file\n")
+	n, err = fdw2.Write(bytesWrite)
+	check(err)
+	fmt.Printf("Wrote %v bytes to file\n", n)
+
+
+	fdw2.Seek(10,0)
+	bytesWrite = []byte("Writing in the middle")
+	n, err = fdw2.Write(bytesWrite)
+	check(err)
+	fmt.Printf("Wrote %v bytes to file\n", n)
+
+}
+
+
 func CallFileIOFunctions(){
-	fileRead()
+	// fileRead()
+	fileWrite()
+
 }
 
 
