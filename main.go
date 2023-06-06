@@ -7,8 +7,9 @@ import (
 
 	// "github.com/tcsc/langtutor/varsfncs"
 	// "github.com/tcsc/langtutor/flowcontrol"
-	"github.com/tcsc/langtutor/ioexamples"
+	// "github.com/tcsc/langtutor/ioexamples"
 	// "time"
+	"github.com/tcsc/langtutor/datastructs"
 )
 
 
@@ -30,6 +31,7 @@ func main() {
 	// flowcontrol.DeferAndRecover()
 
 	// IO
-	ioexamples.CallFileIOFunctions()
+	// ioexamples.CallFileIOFunctions()
+	datastructs.DataStructsPrimitives()
 
 }
