@@ -2,14 +2,13 @@ package main
 
 import (
 	"fmt"
-
 	qt "rsc.io/quote"
-
 	// "github.com/tcsc/langtutor/varsfncs"
 	// "github.com/tcsc/langtutor/flowcontrol"
 	// "github.com/tcsc/langtutor/ioexamples"
 	// "time"
-	"github.com/tcsc/langtutor/datastructs"
+	// "github.com/tcsc/langtutor/datastructs"
+	"github.com/tcsc/langtutor/aoc"
 )
 
 
@@ -32,6 +31,7 @@ func main() {
 
 	// IO
 	// ioexamples.CallFileIOFunctions()
-	datastructs.DataStructsPrimitives()
+	// datastructs.DataStructsPrimitives()
 
+	aoc.SolveQuestion("2021_1")
 }
