@@ -33,5 +33,6 @@ func main() {
 	// ioexamples.CallFileIOFunctions()
 	// datastructs.DataStructsPrimitives()
 
-	aoc.SolveQuestion("2021_1")
+	// aoc.SolveQuestion2021("2021_1")
+	aoc.SolveQuestion2021("2021_2")
 }

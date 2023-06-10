@@ -7,11 +7,8 @@ import (
 	// "io"
 )
 
-const QUESTION_CODE = "2021_1"
-const ENDLINE = '\n'
+func que1part1(){
 
-func part1(){
-	
 	// inputPath := "./aoc/inputs/que2021_1_1.txt"
 	inputPath := "./aoc/inputs/adventofcode.com_2021_day_1_input.txt"
 	fmt.Println("AOC 2021 Question 1 part1 with input", inputPath)
@@ -52,7 +49,7 @@ func part1(){
 }
 
 
-func part2(){
+func que1part2(){
 	inputPath := "./aoc/inputs/adventofcode.com_2021_day_1_input.txt"
 	fmt.Println("AOC 2021 Question 1 part2 with input", inputPath)
 
@@ -98,17 +95,4 @@ func part2(){
 
 	fmt.Printf("Times Window Size Inc. %#v\n", timesWindowInc)
 
-}
-
-
-func SolveQuestion(questionCode string){
-
-	if(questionCode != QUESTION_CODE){
-		return
-	}
-	
-	part1()
-	part2()
-	
-	
 }
