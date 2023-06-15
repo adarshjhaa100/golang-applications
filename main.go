@@ -39,5 +39,5 @@ func main() {
 	// aoc.SolveQuestion2021("2021_1")
 	// aoc.SolveQuestion2021("2021_2")
 	// methodsinterface.CallMethodVehicle()
-	methodsinterface.ImplInterface() 
+	methodsinterface.ImplInterface()  
 }
