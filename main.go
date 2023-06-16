@@ -3,15 +3,15 @@ package main
 import (
 	"fmt"
 
+	"github.com/tcsc/langtutor/generics"
 	qt "rsc.io/quote"
-
 	// "github.com/tcsc/langtutor/varsfncs"
 	// "github.com/tcsc/langtutor/flowcontrol"
 	// "github.com/tcsc/langtutor/ioexamples"
 	// "time"
 	// "github.com/tcsc/langtutor/datastructs"
 	// "github.com/tcsc/langtutor/aoc"
-	methodsinterface "github.com/tcsc/langtutor/methodsInterface"
+	// methodsinterface "github.com/tcsc/langtutor/methodsInterface"
 )
 
 
@@ -39,5 +39,7 @@ func main() {
 	// aoc.SolveQuestion2021("2021_1")
 	// aoc.SolveQuestion2021("2021_2")
 	// methodsinterface.CallMethodVehicle()
-	methodsinterface.ImplInterface()  
+	// methodsinterface.ImplInterface()  
+
+	generics.ImplGeneric()
 }
