@@ -19,5 +19,6 @@ func RunConcurrency(){
 
 	// primaryGoroutine()
 	// wgImpl()
-	mutexImpl()
+	// mutexImpl()
+	RunChannels()
 }
