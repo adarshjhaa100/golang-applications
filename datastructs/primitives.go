@@ -47,6 +47,7 @@ func arrays() {
 	fmt.Printf("Array a: %#v\n", a)
 }
 
+// NOTE: Array/Slices are passed as reference by default
 func sliceIntro() {
 	arr := [5]int{3, 4, 5, 6, 7}
 
