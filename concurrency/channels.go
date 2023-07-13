@@ -3,7 +3,6 @@ package concurrency
 import (
 	"fmt"
 	"sync"
-	// "time"
 )
 
 
@@ -75,7 +74,7 @@ func buffChan(){
 	// ch_buff := make(chan int)
 	wg := sync.WaitGroup{}
 	wg.Add(2)
-
+	
 	go func(ch <-chan int){
 		// for range reads until channel is closed
 		// for i := range ch {
@@ -128,8 +127,6 @@ func selectChan() {
 					return
 			}
 		}
-
-		wg.Done()
 	}()
 
 	go func(){
@@ -152,10 +149,43 @@ func selectChan() {
 }
 
 
+func BuffChannelTst(){
+	wg := sync.WaitGroup{}
+
+	ch := make(chan int, 10000)
+
+	wg.Add(2)
+	go func(ch <-chan int){
+		for i := 0; i < 10000; i++ {
+			if(i % 23 == 0){
+				val, ok := <-ch
+				if(ok){
+					fmt.Println(val)
+				} else {
+					fmt.Println("Not OK")
+				}
+			}
+		}
+		wg.Done()
+	}(ch)
+
+	go func(ch chan<- int){
+		for i := 0; i< 10000; i++ {
+			ch <- i
+		}
+		wg.Done()
+	}(ch)
+
+	wg.Wait()
+}
+
+
+
 func RunChannels(){
 	// unbufferedChan()
 	// sendReceiveOnlyChan()
 	// buffChan()
-	selectChan()
+	// selectChan()
+	BuffChannelTst()
 
 }

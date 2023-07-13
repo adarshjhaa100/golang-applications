@@ -1,0 +1,2 @@
+debugging go code GDB: https://go.dev/doc/gdb
+Google IO talk concurrency: https://www.youtube.com/watch?v=QDDwwePbDtw

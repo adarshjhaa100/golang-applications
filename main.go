@@ -3,8 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/tcsc/langtutor/concurrency"
+	// "github.com/tcsc/langtutor/concurrency"
 	// "github.com/tcsc/langtutor/generics"
+	"github.com/tcsc/langtutor/webbasics"
 	qt "rsc.io/quote"
 	// "github.com/tcsc/langtutor/varsfncs"
 	// "github.com/tcsc/langtutor/flowcontrol"
@@ -43,5 +44,7 @@ func main() {
 	// methodsinterface.ImplInterface()  
 
 	// generics.ImplGeneric()
-	concurrency.RunConcurrency()
+	// concurrency.RunConcurrency()
+
+	webbasics.RunWebFunctions()
 }
