@@ -1,0 +1,8 @@
+DefaultServerMux (global and exported)
+Response
+Request
+Handling Panic in handler (panic is limited to the given request)
+
+"new" in Go
+
+Chi-router : Try later

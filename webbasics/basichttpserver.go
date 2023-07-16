@@ -6,7 +6,16 @@ import (
 )
 
 func BasicHttpServer() {
-	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
+
+	// Go by default uses DefaultServerMux which is global and exported var
+	// This could pose a security threat. So we should create a new server mux\
+	
+	serverMux := http.NewServeMux()
+
+
+	serverMux.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
+		
+		// Fprintf writes to a specific writer
 		fmt.Fprintf(w, "<h1>Welcome to homepage!</h1>")
 		fmt.Printf("Req object: %#v\n", r)
 		
@@ -27,10 +36,13 @@ func BasicHttpServer() {
 	// mounted data/static/ as root. so the contents indise the /static are 
 	// visible to the FileServer. request to /static tells to find files in the
 	// data/static/ + /static/ = data/static/static directory
-	http.Handle("/static/", http.StripPrefix("/static/", fs)) 
+	serverMux.Handle("/static/", http.StripPrefix("/static/", fs)) 
 
 
 	// Listens on TCP address, then calls Serve with handler
+
+
+	
 	const PORT = "8081"
-	http.ListenAndServe(fmt.Sprintf(":%v", PORT), nil)
+	http.ListenAndServe(fmt.Sprintf(":%v", PORT), serverMux)
 }

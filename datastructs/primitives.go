@@ -169,6 +169,18 @@ func mapsImplement(){
 }
 
 
+func initWithNew(){
+	// Go has new keyword which can be used to initialize with zeros and return 
+	// pointer
+	vh := new(Vehicle)
+
+	// this is similar to
+	vh = &Vehicle{}
+
+	fmt.Println(vh)
+}
+
+
 func DataStructsPrimitives() {
 	// pointers()
 	// structImpl()

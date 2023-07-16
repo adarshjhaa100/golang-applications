@@ -21,6 +21,10 @@ func helloWorldHttpServer(){
 	// first argument is URL pattern. Second is tun handler function
 	
 	// Register handler with a pattern
+
+	// A panic on handler is applicable only to the request 
+	// that triggered it. The Server will keep working normally from subsequest
+	// requests
 	http.HandleFunc("/", func(wrtr http.ResponseWriter, r *http.Request) {
 		// w is a writer object that can be passed to a fprintf(writes to io writer) function
 		fmt.Fprintf(wrtr, "Requested at : %#v", r.URL.Path)
