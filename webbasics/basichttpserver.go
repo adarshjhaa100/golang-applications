@@ -19,6 +19,8 @@ func BasicHttpServer() {
 		fmt.Fprintf(w, "<h1>Welcome to homepage!</h1>")
 		fmt.Printf("Req object: %#v\n", r)
 		
+		fmt.Printf("requestor's address: %#v\n", r.RemoteAddr)
+
 		// Read get parameters
 		if method := r.Method; method == "GET" {
 			fmt.Printf("Get req object parmas: %#v\n ", r.URL.Query().Get("a"))

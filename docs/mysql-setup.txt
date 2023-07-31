@@ -1,0 +1,22 @@
+
+# create sql instance with root password: 
+docker run --name some-mysql1 \
+-v mysql-test:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=hello-world \
+-e MYSQL_USER=aj \
+-e MYSQL_HOST=% \
+-e MYSQL_PASSWORD=hello-world \
+-e MYSQL_DATABASE=testdb \
+-p 3306:3306 \
+-d mysql:latest
+
+
+some-mysql1
+
+
+create user 'aj'@'172.17.0.1' IDENTIFIED BY 'hello-world';
+
+GRANT ALL PRIVILEGES ON *.* TO 'aj'@'172.17.0.1' WITH GRANT OPTION;
+
+flush privileges;
+

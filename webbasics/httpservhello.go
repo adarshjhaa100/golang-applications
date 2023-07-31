@@ -28,6 +28,7 @@ func helloWorldHttpServer(){
 	http.HandleFunc("/", func(wrtr http.ResponseWriter, r *http.Request) {
 		// w is a writer object that can be passed to a fprintf(writes to io writer) function
 		fmt.Fprintf(wrtr, "Requested at : %#v", r.URL.Path)
+		
 		wg.Add(1)
 		go func(){
 			fmt.Printf("Requested: %#v\n\n", r)

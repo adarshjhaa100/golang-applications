@@ -6,8 +6,9 @@ import "fmt"
 func RunWebFunctions() {
 	fmt.Println("Web basics code examples!")
 	// helloWorldHttpServer()
-	BasicHttpServer()
+	// BasicHttpServer()
 
 	// RunMiddlewares()
 	// RunChainedMiddleware()
+	ConnectSQL()
 }
