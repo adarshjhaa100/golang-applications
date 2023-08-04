@@ -1,0 +1,14 @@
+<h1>Contact Form</h1>
+{{if .Success}}
+    <p>Form Values Submitted</p>
+{{else}}
+<form method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+    <label for="phone">Phone</label>
+    <input type="tel" name="phone" id="phone">
+    <label for="dob">DOB</label>
+    <input type="date" name="dob" id="dob" required>
+    <input type="submit" name="submit" id="submit" value="Submit">
+</form>
+{{end}}

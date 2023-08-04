@@ -1,0 +1,17 @@
+<head>
+    <link rel="stylesheet" href="./static/testcss.css">
+</head>
+
+<h1>{{.PageTitle}}</h1>
+<p>Test</p>
+{{block "content" .}}
+<ul>
+    {{range .Todos}}
+        {{if .Done}}
+            <li>{{.Title}}</li>
+        {{else}}
+            <li>Not Visible</li>
+        {{end}}
+    {{end}}
+</ul>
+{{end}}

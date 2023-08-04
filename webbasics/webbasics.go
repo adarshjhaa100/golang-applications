@@ -10,5 +10,7 @@ func RunWebFunctions() {
 
 	// RunMiddlewares()
 	// RunChainedMiddleware()
-	ConnectSQL()
+	// ConnectSQL()
+	// TemplateUse()
+	HttpForms()
 }
