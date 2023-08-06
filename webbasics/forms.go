@@ -36,7 +36,8 @@ func HttpForms(){
 
 		if( r.Method == "POST" ){
 			formData := FormBody {
-				name : r.FormValue("name"),
+				name : r.FormValue("name"), // parse the first value of the form, 
+				//calls ParseMultipartform or ParseForm if required
 				phone: r.FormValue("phone"),
 				dateTime: r.FormValue("dob"),
 			}

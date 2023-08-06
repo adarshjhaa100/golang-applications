@@ -2,7 +2,6 @@ package webbasics
 
 import "fmt"
 
-
 func RunWebFunctions() {
 	fmt.Println("Web basics code examples!")
 	// helloWorldHttpServer()
@@ -12,5 +11,7 @@ func RunWebFunctions() {
 	// RunChainedMiddleware()
 	// ConnectSQL()
 	// TemplateUse()
-	HttpForms()
+	// HttpForms()
+	// JSONImpl()
+	JSONWeb()
 }
