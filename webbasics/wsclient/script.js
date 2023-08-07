@@ -12,12 +12,12 @@ conn.addEventListener("error", (e) => {
 })
 
 conn.addEventListener("close", (e) => {
-    console.log("Connection CLosed")
+    console.log("Connection Closed")
 })
 
 conn.addEventListener("message", (e) => {
-    console.log("Message")
-    console.log(e.data) // data from connection
+    // console.log("Message")
+    console.log("Server: ", e.data) // data from connection
 })
 
 conn.addEventListener("open", (e) => {
@@ -34,4 +34,5 @@ form.addEventListener("submit", (e) => {
     //     "name": "Hello",
     //     "age": 12
     // }))
+    msg.value = "";
 })

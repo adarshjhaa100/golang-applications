@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"net/http"
+	"strings"
 	"time"
 
 	"nhooyr.io/websocket"
@@ -28,9 +29,12 @@ func readFromWS(conn *websocket.Conn, ctx *context.Context, buff *[]byte) (int, 
 
 	fmt.Printf("\n%v bytes read, data: %v\n", n, string(*buff))
 
-	if string(*buff) == "close" {
+	if strings.Contains(string(*buff), "close") {
 		conn.Close(websocket.StatusNormalClosure, "")
 	}
+
+	// Clean the buffer post reading messages
+	*buff = make([]byte, 4096)
 
 	return n, &typ
 
@@ -54,7 +58,7 @@ func wsHandler(w http.ResponseWriter, r *http.Request) {
 	// var res interface{}
 
 	/*---------------Read messages---------------*/
-
+	// // Receive JSON messages
 	// for {
 	// 	var v interface{}
 	// 	err = wsjson.Read(ctx, conn, &v)
@@ -74,8 +78,6 @@ func wsHandler(w http.ResponseWriter, r *http.Request) {
 		conn.Write(ctx, *typ, []byte(resp))
 
 	}
-
-	// Close connection in case everything goes well
 
 }
 
