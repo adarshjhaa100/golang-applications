@@ -1,0 +1,14 @@
+Websockets:
+
+Bidirectional connection over http.
+
+Uses HTTP Upgrade protocol for upgrading existing connection to Websockets
+
+Current WS lib in experimental in std, use this: https://pkg.go.dev/nhooyr.io/websocket
+
+Client can be modelled based on MDN example:
+    https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications
+
+
+Follow for a more robust example: 
+    https://github.com/nhooyr/websocket/tree/master/examples

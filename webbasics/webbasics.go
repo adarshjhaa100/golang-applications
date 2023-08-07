@@ -13,5 +13,7 @@ func RunWebFunctions() {
 	// TemplateUse()
 	// HttpForms()
 	// JSONImpl()
-	JSONWeb()
+	// JSONWeb()
+	// SessionImpl()
+	WSImpl()
 }
